@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuckaway, a clipboard manager for Windows</title>
+<meta name="description" content="Tuckaway keeps everything you copy in a searchable history on your PC, encrypted, so you can find it and paste it again with one shortcut.">
+<link rel="icon" href="images/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap"><a class="brand" href="./"><img src="images/icon.svg" alt=""><b>TUCKAWAY</b></a>
+  <div class="links"><a href="./" aria-current="page">Home</a><a href="screenshots.html">Screenshots</a><a href="privacy.html">Privacy</a></div></div></nav>
+
+<main id="main" class="wrap">
+  <h1>Everything you copy, ready when you need it</h1>
+  <p class="lead">Tuckaway is a clipboard manager for Windows that keeps everything you copy in a searchable history on your PC, encrypted, so you can find it and paste it again with one shortcut.</p>
+
+  <div class="actions">
+    <!-- STORE LINK: until the Microsoft Store address is known this is a disabled label (a span, so it is no link and no
+         Tab stop). Then make it <a class="button" href="STORE ADDRESS" id="store"> with the text "Get it from Microsoft Store". -->
+    <span class="button disabled" id="store" aria-disabled="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4.5 10.5 3.4V11H3zM11.5 3.3 21 2v9h-9.5zM3 12h7.5v7.6L3 18.5zM11.5 12H21v9l-9.5-1.3z"/></svg>
+      Coming soon to Microsoft Store</span>
+    <a class="button quiet" href="screenshots.html">See the screenshots</a>
+  </div>
+
+  <!-- The hero shows History. Until the full Dark and Light pictures are published (images/screens/full), it is the
+       picture with Dark on the left and Light on the right; the script below swaps in the reader's theme when it exists. -->
+  <figure class="hero">
+    <img class="shot" id="hero" src="images/screens/history.png" width="1664" height="1280"
+         data-dark="images/screens/full/history-dark.png" data-light="images/screens/full/history-light.png"
+         alt="Tuckaway's History window, listing recent clips with their programs and times">
+  </figure>
+
+  <h2>What it does</h2>
+  <div class="features">
+    <div><b>Find anything you copied</b>Type to search your whole history, with the words highlighted. Filter by kind, program, folder or tag.</div>
+    <div><b>Search by meaning</b>Optional: "bill" also finds an invoice. It runs entirely on your PC.</div>
+    <div><b>Paste faster</b>Enter or a number key pastes into the program you were in, with or without formatting.</div>
+    <div><b>Paste queue and Quick Slots</b>Collect clips and paste them in order, or keep nine on their own shortcuts.</div>
+    <div><b>Organize</b>Favorites, folders, smart folders that fill themselves, tags and workspaces.</div>
+    <div><b>Capture Sessions</b>Copies made together are grouped, so you can paste them all at once.</div>
+    <div><b>Secret Guard and App Lock</b>Passwords and keys are sealed as you copy them; a PIN locks the history.</div>
+    <div><b>Private by design</b>Your clips stay on your PC, encrypted. No account, no tracking, no ads.</div>
+  </div>
+
+  <h2>More</h2>
+  <ul>
+    <li><a href="screenshots.html">Screenshots</a>: every screen in Dark and Light.</li>
+    <li><a href="privacy.html">Privacy policy</a>: what Tuckaway stores, and the two times it connects to the internet.</li>
+    <li>The installer for Windows is also on <a href="https://github.com/raviv-steinberg/Tuckaway-Releases/releases/latest">GitHub</a>.</li>
+  </ul>
+</main>
+
+<footer><div class="wrap">Tuckaway · <a href="privacy.html">Privacy</a> · <a href="screenshots.html">Screenshots</a> · <a href="mailto:tuckaway.support@gmail.com">tuckaway.support@gmail.com</a></div></footer>
+
+<script>
+  // Shows the hero in the reader's theme once its full picture exists, and follows a theme change while the page is open.
+  // Until then (or when a picture fails to load) the combined Dark and Light picture stays.
+  (function () {
+    var hero = document.getElementById('hero');
+    var scheme = window.matchMedia('(prefers-color-scheme: dark)');
+    function show() {
+      var wanted = scheme.matches ? hero.dataset.dark : hero.dataset.light;
+      var probe = new Image();
+      probe.onload = function () { hero.src = wanted; };
+      probe.src = wanted;
+    }
+    show();
+    if (scheme.addEventListener) scheme.addEventListener('change', show);
+  })();
+</script>
+</body>
+</html>
