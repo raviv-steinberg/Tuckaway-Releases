@@ -240,6 +240,14 @@
     }
 
     SCREENS.forEach(addScreen);
+
+    // A link straight to one screen (screenshots.html#capture-sessions) names a figure this script has only just built,
+    // so the browser found nothing to scroll to when the page opened; the placeholders already hold each picture's height,
+    // so scrolling now lands on the right screen.
+    if (location.hash.length > 1) {
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) target.scrollIntoView();
+    }
   })();
 </script>
 </body>

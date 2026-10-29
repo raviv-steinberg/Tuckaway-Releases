@@ -1,7 +1,18 @@
 # Tuckaway Releases
 
-Releases of [Tuckaway](https://github.com/raviv-steinberg/Tuckaway-Releases/releases/latest), a clipboard manager for
-Windows.
+Releases of [Tuckaway](https://raviv-steinberg.github.io/Tuckaway-Releases/), a clipboard manager for Windows. It keeps
+everything you copy in a searchable history on your PC, encrypted, so you can find it and paste it again with one
+shortcut.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/screens/full/history-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/screens/full/history-light.png">
+  <img alt="Tuckaway's History window, listing recent clips with their programs and times" src="docs/images/screens/full/history-light.png">
+</picture>
+
+[Website](https://raviv-steinberg.github.io/Tuckaway-Releases/) ·
+[Screenshots](https://raviv-steinberg.github.io/Tuckaway-Releases/screenshots.html) ·
+[Privacy policy](https://raviv-steinberg.github.io/Tuckaway-Releases/privacy.html)
 
 ## Install
 
@@ -18,4 +29,4 @@ downloads the setup from this repository and checks its SHA-256 before it runs. 
 your clips.
 
 This repository holds app releases only: its latest release is always the newest Tuckaway. Model files are in
-[Tuckaway-Models](https://github.com/raviv-steinberg/Tuckaway-Models).
+[Tuckaway-Models](https://github.com/raviv-steinberg/Tuckaway-Models). The website's pages are in the `docs` folder.
